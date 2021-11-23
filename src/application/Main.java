@@ -87,31 +87,27 @@ public class Main extends Application {
 		thread.start();
 	}
 	
-	// 시렞로 프로그램을 동작시키는 메소드입니다.
+	// 실제로 프로그램을 동작시키는 메소드입니다.
 	@Override
 	public void start(Stage primaryStage) {
+		//GUI
 		BorderPane root = new BorderPane();
 		root.setPadding(new Insets(5));
-		
 		HBox hbox = new HBox();
 		hbox.setSpacing(5);
-		
 		TextField userName = new TextField();
-		userName.setPrefWidth(150);
-		userName.setPromptText("닉네임을 입력하세요.");
-		HBox.setHgrow(userName,  Priority.ALWAYS);
-		
 		TextField IPText = new TextField("127.0.0.1");
 		TextField portText = new TextField("9876");
+
+		HBox.setHgrow(userName,  Priority.ALWAYS);
+		userName.setPrefWidth(150);
+		userName.setPromptText("닉네임을 입력하세요.");
 		portText.setPrefWidth(80);
-		
 		hbox.getChildren().addAll(userName, IPText, portText);
 		root.setTop(hbox);
-		
 		textArea = new TextArea();
 		textArea.setEditable(false);
 		root.setCenter(textArea);
-		
 		TextField input = new TextField();
 		input.setPrefWidth(Double.MAX_VALUE);
 		input.setDisable(true);
@@ -158,7 +154,7 @@ public class Main extends Application {
 				sendButton.setDisable(true);
 			}
 		});
-				
+				//GUI
 				BorderPane pane = new BorderPane();
 				pane.setLeft(connectionButton);
 				pane.setCenter(input);
